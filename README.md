@@ -64,3 +64,24 @@ It struggles more with:
 ### Main takeaway
 The biggest weakness of the model is separating **Neutral** from **Negative**.  
 This is likely because TF-IDF depends on surface words, so it has trouble with subtle meaning and limited context.
+
+
+## Additional Analysis
+
+To improve interpretability, I added:
+- a normalized confusion matrix to compare class-level error rates
+- an analysis of the top predictive words for each sentiment class
+- a chart of the most frequent misclassification pairs
+- a visual comparison of the baseline models
+
+These additions helped explain both the strengths and the weaknesses of the best-performing model.
+
+# Installation project
+ * git clone project
+ * open data folder and unzip Compressed data then should be three part 
+   * origin dataset (Arabic sentiment dataset)
+   * cleaned dataset
+   * folder clean contain (train.csv , test.csv)
+ * create virtual environment (that depends on your machine)
+ * pip3 install requirements.txt
+ * finally you can try anything in this project
