@@ -76,6 +76,39 @@ To improve interpretability, I added:
 
 These additions helped explain both the strengths and the weaknesses of the best-performing model.
 
+## Human-in-the-Loop Review Simulation
+
+To explore a more realistic deployment scenario, I simulated a human-in-the-loop workflow based on model confidence.
+
+The idea was to rank test samples by prediction confidence and assume that the lowest-confidence cases would be sent to a human reviewer for correction. This makes it possible to estimate how selective manual review could improve reliability without requiring review of the full dataset.
+
+### Results
+- Baseline:
+  - Accuracy: 0.8024
+  - Macro F1: 0.7767
+
+- With 5% human review:
+  - Accuracy: 0.8301
+  - Macro F1: 0.8094
+
+- With 10% human review:
+  - Accuracy: 0.8539
+  - Macro F1: 0.8364
+
+- With 15% human review:
+  - Accuracy: 0.8757
+  - Macro F1: 0.8608
+
+- With 20% human review:
+  - Accuracy: 0.8954
+  - Macro F1: 0.8828
+
+### Interpretation
+The simulation suggests that a relatively small amount of selective human review can significantly improve overall system performance. This indicates that confidence-based triage may be a practical strategy for building more reliable sentiment classification systems.
+
+### Limitation
+This is a simulation, not a real user study. It assumes that all reviewed samples are corrected perfectly by a human reviewer, so the reported gains should be interpreted as an optimistic estimate.
+
 # Installation project
  * git clone project
  * open data folder and unzip Compressed data then should be three part 
